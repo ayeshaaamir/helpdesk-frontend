@@ -1,13 +1,17 @@
+import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
 import "./index.css";
+import Home from "./pages/Home";
+import NotFound from "./pages/NotFound";
 
 function App() {
   return (
     <>
-      <div className="flex items-center justify-center min-h-screen bg-gray-100">
-        <button className="px-4 py-2 bg-blue-500 text-white font-semibold rounded-lg hover:bg-blue-600">
-          IBS Setup
-        </button>
-      </div>
+      <Router>
+        <Routes>
+          <Route path="/" element={<Home/>}/>
+          <Route path="*" element={<NotFound/>}/>
+        </Routes>
+      </Router>
     </>
   );
 }
